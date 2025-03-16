@@ -1,34 +1,20 @@
 import { useState } from 'react'
 
 const App = () => {
-  const [clicks, setClicks] = useState({
-    left: 0, right: 0
-  })
-
-  const handleLeftClick = () => {
-    const newClicks = { 
-      ...clicks, 
-      left: clicks.left + 1 
-    }
-    setClicks(newClicks)
-  }
-  
-  const handleRightClick = () => {
-    const newClicks = { 
-      ...clicks, 
-      right: clicks.right + 1 
-    }
-    setClicks(newClicks)
-  }
+  const [left, setLeft] = useState(0);
+  const [right, setRight] = useState(0);
 
   return (
     <div>
-      {clicks.left}
-      <button onClick={handleLeftClick}>left</button>
-      <button onClick={handleRightClick}>right</button>
-      {clicks.right}
+      <div>
+        {left}
+        <button onClick={() => setLeft(left + 1)}>kiri</button>
+        <button onClick={() => setRight(right + 1)}>kanan</button>
+        {right}
+      </div>
     </div>
-  )
-}
+  );
+};
+
 
 export default App
